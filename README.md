@@ -42,6 +42,8 @@ conda activate elastocaloric_ai
 # 2. Install the FEniCSx physics solver and Gmsh mesher
 conda install -c conda-forge fenics-dolfinx gmsh python-gmsh
 
+---
+
 ## 🔮 Future Work & Research Roadmap
 
 This repository represents `v1.0` of the Elastocaloric-AI pipeline. The core bridging of DRL, topological constraints, and FEA is functional, but there are three major vectors for future development:
