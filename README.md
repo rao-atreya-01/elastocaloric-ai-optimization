@@ -9,6 +9,8 @@ I-Driven Topological Optimization of Elastocaloric Metamaterials: Resolving the 
 
 An end-to-end computational mechanics pipeline that uses Deep Reinforcement Learning (DRL) to autonomously design 3D-printable elastocaloric heat exchangers. 
 
+![3D Stress Analysis of Metamaterial](mesh_result.png)
+
 
 
 ## 🚨 The Problem: The Airflow vs. Fatigue Paradox
