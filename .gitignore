@@ -1,0 +1,11 @@
+# Ignore macOS files
+.DS_Store
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore the heavy AI data and brain (keep these local on your Mac!)
+proprietary_dataset/
+*.pth
+*.pt
