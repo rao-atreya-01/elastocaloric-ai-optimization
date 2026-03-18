@@ -85,8 +85,17 @@ for generation in range(1, 21):
         predicted_stress = model(x_tensor, edge_index_tensor, batch_tensor).item()
         
     print(f"Gen {generation:02d} | Tested Radius: {radius} -> Predicted Stress: {predicted_stress:.2f} MPa")
+
+# 4. MANUFACTURING CONSTRAINT & PENALTY FUNCTION
+    wall_thickness = 0.5 - radius
+    min_printable_thickness = 0.20 # The absolute limit of Dr. Voit's 3D printers
     
- # 4. Agent Evaluation (Just find the absolute lowest stress)
+    # If the AI designs a wall too thin, we slap it with a massive stress penalty
+    if wall_thickness < min_printable_thickness:
+        print(f"   ⚠️ REJECTED: Wall thickness ({wall_thickness:.3f}) is unprintable!")
+        predicted_stress += 100000.0 # Artificial mathematical penalty
+        
+    # Did we beat the high score (while obeying the laws of manufacturing)?
     if predicted_stress < best_stress:
         best_stress = predicted_stress
         best_radius = radius
